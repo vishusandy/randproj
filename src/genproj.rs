@@ -77,18 +77,17 @@ pub fn gen(mut pnum: usize, pcat: String, pall: bool, call: bool) {
 			}
 		} else { //generate projects from a specified category
 			println!("Showing {} random projects from the `{}` category ", pnum, pcat);
-				
-				let gcati = cats.iter().position(|&r| r == pcat).unwrap_or(rg.gen_range(0, 12));
-				if cats[gcati] != pcat {
-					println!("Category {} not found.  Using random category {} instead.", pcat, cats[gcati]);
-				}
-				rg.shuffle(&mut projs[gcati]);
-				if pnum > projs[gcati].len() {
-					pnum = projs[gcati].len();
-				}
-				for i in 0..pnum {
-					println!("{}: {}", cats[gcati], projs[gcati][i]);
-				}
+			let gcati = cats.iter().position(|&r| r == pcat).unwrap_or(rg.gen_range(0, 12));
+			if cats[gcati] != pcat {
+				println!("Category {} not found.  Using random category {} instead.", pcat, cats[gcati]);
+			}
+			rg.shuffle(&mut projs[gcati]);
+			if pnum > projs[gcati].len() {
+				pnum = projs[gcati].len();
+			}
+			for i in 0..pnum {
+				println!("{}: {}", cats[gcati], projs[gcati][i]);
+			}
 		}
 	}
 }
