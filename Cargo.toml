@@ -1,0 +1,8 @@
+[package]
+name = "randproj"
+version = "0.1.0"
+authors = ["Andrew <prindle.andrew@gmail.com>"]
+
+[dependencies]
+argparse = "*"
+rand = "0.3.*"
