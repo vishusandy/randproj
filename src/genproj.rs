@@ -1,9 +1,4 @@
-// extern crate rand;
 use rand::{thread_rng, Rng};
-/*
-let mut rng = rand::thread_rng();
-rng.shuffle(&mut secret_num);
-*/
 
 pub fn gen(mut pnum: usize, pcat: String, pall: bool, call: bool) {
 	let mut rg = thread_rng();
