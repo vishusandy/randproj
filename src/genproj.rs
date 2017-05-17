@@ -76,17 +76,10 @@ pub fn gen(mut pnum: usize, pcat: String, pall: bool, call: bool) {
 		if pcat == "" { //generate projects from a random category
 			println!("Showing {} random projects from a random category", pnum);
 			if pnum == 1 {
-				// let gcat = rg.choose(&cats);
-				// println!("Project from the {} category.", gcat.unwrap());
 				let gcati = rg.gen_range(0, 12);
 				let gproj = rg.gen_range(0, cats[gcati].len()-1);
-				// println!("Project from the {} category.", cats[gcati]);
 				println!("{}: {}", cats[gcati], projs[gcati][gproj]);
-				// let gproj = rg.choose(&projs[gcat]);
-				// println!("Project: {} from the {} category.", cats[gcat], projs[gcat][gproj]);
 			} else {
-				// let mut catprojs = projs[];
-				// rg.shuffle(&mut );
 				for _ in 0..pnum {
 					let gcati = rg.gen_range(0, 12);
 					let gproj = rg.gen_range(0, projs[gcati].len()-1);
@@ -95,27 +88,20 @@ pub fn gen(mut pnum: usize, pcat: String, pall: bool, call: bool) {
 			}
 		} else { //generate projects from a specified category
 			println!("Showing {} random projects from the `{}` category ", pnum, pcat);
-				// let gcati = cats.iter().position(|&r| r == pcat).unwrap();
+				
 				let gcati = cats.iter().position(|&r| r == pcat).unwrap_or(rg.gen_range(0, 12));
 				if cats[gcati] != pcat {
 					println!("Category {} not found.  Using random category {} instead.", pcat, cats[gcati]);
 				}
-				// let gcati = rg.gen_range(0, 12);
 				rg.shuffle(&mut projs[gcati]);
 				if pnum > projs[gcati].len() {
 					pnum = projs[gcati].len();
 				}
 				for i in 0..pnum {
-					
 					println!("{}: {}", cats[gcati], projs[gcati][i]);
 				}
-				//for i in [0..pnum] {
-					//println!("", , projs[gcati][i]);
-				//}
 		}
 	}
-	
-	//println!("Generating `{}` projects in the category `{}` with showall: {}", pnum, pcat, pall);
 }
 
 
