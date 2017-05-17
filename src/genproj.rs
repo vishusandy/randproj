@@ -24,12 +24,6 @@ pub fn gen(mut pnum: usize, pcat: String, pall: bool, call: bool) {
 		vec!["Secure transfer protocol (using either two or three parties)", "Secure hash implementation", "Modern encryption algorithm", "Matrix encryption algorithm", "Character frequency analysis"]
 	];
 	
-    // rg.shuffle(&mut );
-	// let mut rng = rand::thread_rng();
-	// rng.shuffle(&mut secret_num);
-	
-	// let test = vec!["one", "two", "three"];
-    // let index = cats.iter().position(|&r| r == "two").unwrap();
 	if  call {
 		println!("Showing all categories.");
 		for i in 0..13 {
